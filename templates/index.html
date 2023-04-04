@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="{% static 'js/App.jsx' %}"></script>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <button onclick="getMessage()">Get Message</button>
+    <div id="message"></div>
+</body>
+</html>
