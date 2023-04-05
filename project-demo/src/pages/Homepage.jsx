@@ -9,8 +9,6 @@ function Home() {
     <div>
       <SearchBar/>
       <RecomBook/>
-      <h1>Welcome to Home page</h1>
-      <p>This is a demo of how to create a chat window using React and MUI.</p>
       <ChatWindow />
     </div>
     
