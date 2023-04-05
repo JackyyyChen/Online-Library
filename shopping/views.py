@@ -8,6 +8,8 @@ from django.http import JsonResponse
 from rest_framework.utils import json
 from django.db.models import Q
 from shopping.models import Cart
+from shopping.models import Order
+
 
 @csrf_exempt
 def add_to_cart(request):
@@ -77,6 +79,15 @@ def user_transfer(request):
         else:
             return JsonResponse({'error': 'This user does not exist!'})
 
+@csrf_exempt
+def order_record(request):
+    if request.method == 'POST':
+        json_data = request.body.decode('utf-8')
+        data = json.loads(json_data)
+        user_id = data['user_id']
+        total_price = data['total']
+        Order(user_id=user_id, total_price=total_price).save()
+        return JsonResponse({'user_id': user_id, 'total_price': total_price})
 
 
 
