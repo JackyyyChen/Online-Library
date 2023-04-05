@@ -7,7 +7,7 @@ import {
   Typography,
   Button,
   Grid,
-  Stack,
+  Divider,
 } from '@mui/material';
 import fetchFunc from "../service/fetchRequest";
 
@@ -69,79 +69,84 @@ const CartPage = () => {
   };
 
   return (
-    <Grid container>
-    <Grid item xs={12} md={6}>
-      <Box>
-       {/* 左边边部分 */}
-       {books.map((book) => (
-        <Card key={book.id} sx={{ marginBottom: 2, borderRadius: 2, boxShadow: 3 }}>
-          <Grid container>
-            <Grid item xs={12} sm={4}>
-              <CardMedia
-                component="img"
-                sx={{ width: '100%', maxHeight: 200, objectFit: 'contain', padding: 2 }}
-                image={book.cover}
-                alt={book.title}
-              />
-            </Grid>
-            <Grid item xs={12} sm={8}>
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  {book.title}
+        <Grid container>
+          <Grid item xs={12} md={9}>
+            <Box sx={{ marginTop: 3 }}>
+              <Typography variant="h4" component="div">
+                购物车
+              </Typography>
+              <br />
+              {books.map((book) => (
+                <Card key={book.id} sx={{ marginBottom: 2, borderRadius: 2, boxShadow: 3 }}>
+                  <Grid container>
+                    <Grid item xs={12} sm={4}>
+                      <CardMedia
+                        component="img"
+                        sx={{
+                          width: '100%',
+                          maxHeight: 200,
+                          objectFit: 'contain',
+                          padding: 2,
+                        }}
+                        image={book.cover}
+                        alt={book.title}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={8}>
+                      <CardContent>
+                        <Typography variant="h5" component="div">
+                          {book.title}
+                        </Typography>
+                        <Typography variant="subtitle1" color="text.secondary">
+                          {book.author}
+                        </Typography>
+                        <Typography variant="body1">${book.price}</Typography>
+                        <Button
+                          variant="contained"
+                          color="error"
+                          onClick={() => handleRemove(book.id)}
+                          sx={{ marginTop: 2 }}
+                        >
+                          删除
+                        </Button>
+                      </CardContent>
+                    </Grid>
+                  </Grid>
+                </Card>
+              ))}
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Box sx={{ marginTop: 3 }}>
+              <Typography variant="h5" component="div">
+                结算信息
+              </Typography>
+              <br />
+              <Divider />
+              <Box sx={{ marginTop: 2 }}>
+                <Typography variant="body1" component="div">
+                  小计 ({books.length} 项): ${calculateTotalPrice()}
                 </Typography>
-                <Typography variant="subtitle1" color="text.secondary">
-                  {book.author}
+                <Typography variant="body1" component="div">
+                  运费: $0.00
                 </Typography>
-                <Typography variant="body1">${book.price}</Typography>
+                <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
+                <Typography variant="h6" component="div">
+                  合计: ${calculateTotalPrice()}
+                </Typography>
                 <Button
                   variant="contained"
-                  color="error"
-                  onClick={() => handleRemove(book.id)}
-                //   sx={{ borderRadius: '50%', minWidth: 40, minHeight: 40, padding: 0, marginLeft: 2 }}
+                  color="primary"
+                  onClick={handlePay}
+                  sx={{ marginTop: 2, width: '100%', boxShadow: 3, borderRadius: 2 }}
                 >
-                  {/* <Typography variant="body2" fontWeight="bold">
-                    &times;
-                  </Typography> */}
-                  删除
+                  去结账
                 </Button>
-              </CardContent>
-            </Grid>
+              </Box>
+            </Box>
           </Grid>
-        </Card>
-      ))}
-      </Box>
-    </Grid>
-    <Grid item xs={12} md={6}>
-    {/* 右边部分 */}
-    <Box sx={{ marginTop: 3 }}>
-        <Typography variant="h3" component="div">
-           你购买的物品：
-        </Typography>
-        <br />
-        <Stack spacing={2}>
-        {books.map((book) => (
-            <Typography key={book.id} variant="h5" component="div">
-            {book.title}
-            </Typography>
-        ))}
-        </Stack>
-        <Box sx={{ marginTop: 3, display: 'flex', justifyContent: 'space-between' }}>
-        <Typography variant="h5" component="div">
-            总价：${calculateTotalPrice()}
-        </Typography>
-        <Button
-            variant="contained"
-            color="primary"
-            onClick={handlePay}
-            sx={{ boxShadow: 3, borderRadius: 2 }}
-        >
-            结账
-        </Button>
-        </Box>
-    </Box>
-    </Grid>
-  </Grid>
-  );
+        </Grid>
+      );
 };
 
 export default CartPage;
