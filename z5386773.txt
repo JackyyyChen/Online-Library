@@ -1,0 +1,29 @@
+Week 1
+We set up a group and we voted and agreed on the project theme of a book recommendation system. As a database developer, I started to learn database knowledge based on Django we used.
+
+Week 2 
+We selected the framework for the front-end, back-end, and database. We also discussed some project details.
+
+Week 3 
+We met to finalize the project's functionalities and received the tutor's opinion. For the project proposal, I was responsible to draw the interface, framework and database ER diagram.
+
+Week 4 
+Team leader Juehao Luo and I discussed database schema and I have written MySQL and Django statements to create database tables.
+
+Week 5 
+We successfully completed Sprint One and even some part of Sprint Two. We completed the login page, registration page. The most difficult part for us was setting up the environment, framework and establishing communication between the front-end and back-end. 
+
+Week 6 
+This week was flexible, but we continued working on the core functionalities of Sprint Two, the dataset I found is not suitable enough for our project, so I was attempting to scrape a range of information from the website https://www.goodreads.com/, including book title, author, publisher, publication date, ISBN, book genre, description, rating, reviews, and other related data.
+
+Week 7 
+Continuing scraping data, data cleaning.
+
+Week 8 
+We finished Sprint Two. Tutor gave us lots of feedback on demo B, for my part, I need to resize dataset and generate description and review for books.
+
+Week 9 
+We started working on the core functionalities of Sprint Three, there are lots of obstacles and we managed to conquer that.
+
+Week 10 
+We completed all the coding tasks and submitted our project report. My focus was on database development for the project.

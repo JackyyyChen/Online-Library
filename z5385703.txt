@@ -1,0 +1,30 @@
+Week1
+I joined the group, Wesley. We discussed the project and set initial goals. We decided on a ‘book recommendation system’ as the theme of the group project. Then we created the Jira group and the group's Github project
+
+Week2
+We have reviewed several existing projects and discussed many possibilities. In addition, we decided on a user story to determine the main features of the project and a phased completion goal.
+
+Week3
+We defined the functionality of the project through group meetings, and I was actively involved in the design of the project, identifying important parts of the front-end. Our discussions were successfully approved by the tutor.
+
+Week4
+We started to work on the project in earnest and I was responsible for creating the front-end part. My main task was to build the framework for the front-end. I handed over the initial framework and the functionality to my team member SongLi for further refinement.
+
+Week5
+We have completed all the work on the first phase of Demo 1, including the user login page, user registration and user profile, and after our demo of Demo 1 we summarised, the comments given to us by tutor and conducted a group meeting. The aim was to summarise the shortcomings in Demo 1 and make changes. We also developed the content of Demo 2.
+
+Week6
+It's been a flexible week, but we are still working hard. This week we started the core work on Sprint2, and I need to continue to design the Search function of the web page and the View Orders function so on
+
+Week7
+Based on feedback and suggestions from our tutor, I improved the previous content such as the login, registration and password reset pages.
+Based on tutor's feedback and suggestions, we improved the previous content. And I have added and improved the Search book function, where users can view their shopping cart and check out. After checking out, users can see the contents of their orders, etc.
+
+Week8
+We completed Demo 2 and presented the work to tutor. After getting the tutor's feedback on our project, I will further revise the framework of Demo2 and I will pass the works which is improved the details of the page to my team member SongLi and speed up the work on the final Sprint3.
+
+Week9
+During the final Sprint3 work we made very rapid progress. I have basically completed the front-end framework and now just need to make further improvements to the content underneath it.
+
+Week10
+It's been a final week and I have got a lot of understanding about React through this project. Working on Sprint3, we achieved all our goals and made many improvements to the final product.
