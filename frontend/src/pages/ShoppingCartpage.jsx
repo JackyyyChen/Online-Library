@@ -22,33 +22,18 @@ const useStyles = makeStyles(() => ({
     },
 }));
 const CartPage = () => {
+    //define state
     const classes = useStyles();
-    // const [existUser, setExistUser] = useState('')
     const user = localStorage.getItem('user');
-    // setExistUser(user)
-    console.log('userName', user);
-
     const userName = {userName: user};
     const navigate = useNavigate();
 
-    // 获取书本的函数
+    //get shopping cart books
     const [books, setBooks] = useState({});
-
-    // const aaa = {
-    //   34: {author: "Mark P. O. Morford",price: 5.8,quantity: 3,title: "Classical Mythology",url: "http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg" },
-    // };
-    // const bbb = {book_list: aaa}
-
-    // useEffect(() => {
-    // setBooks(bbb)
-    // }, []);
-
-    console.log(books)
-
+    //get total books
     const fetchBooks = async () => {
         const response = await fetchFunc('/getShoppingBooks/', 'POST', userName);
         const data = await response.json();
-        console.log('这些书', data);
         if (data.message) {
             alert(data.message);
         } else {
@@ -59,7 +44,7 @@ const CartPage = () => {
     useEffect(() => {
         fetchBooks();
     }, []);
-
+    //handle delete book
     const handleRemove = async (bookId) => {
         // setBooks(books.filter((book) => book !== bookId));
         const bookID = {cart_id: bookId};
@@ -68,15 +53,15 @@ const CartPage = () => {
         if (data.error) {
             alert('Delete fail');
         } else {
-            // 获取要删除的书的价格和数量
+            //get book price and quantity
             const bookPrice = books.book_list[bookId].price;
             const bookQuantity = books.book_list[bookId].quantity;
 
-            // 计算新的总价
+            //count new total price
             const newTotalPrice = books.total_price - bookPrice * bookQuantity;
             fetchBooks();
             alert('Delete successed！');
-            // 更新状态
+            // update state
             setBooks((prevBooks) => {
                 const updatedBooks = {...prevBooks};
                 delete updatedBooks.book_list[bookId];
@@ -85,7 +70,7 @@ const CartPage = () => {
             });
         }
     };
-
+    //handle add book number
     const handleAddBook = async (book, quantity) => {
         const bookID = {cart_id: book};
         console.log(bookID);
@@ -104,7 +89,7 @@ const CartPage = () => {
             alert('Add number fail');
         }
     };
-
+    //handle reduce book number
     const handleReduceBook = async (book, quantity) => {
         const bookID = {cart_id: book};
         console.log(bookID);
@@ -123,7 +108,7 @@ const CartPage = () => {
             alert('Reduce number fail');
         }
     };
-
+    //handle pay
     const handlePay = () => {
         // alert('支付成功！');
         // console.log('111',{ userName: user, total_price: books.total_price } )
@@ -136,8 +121,6 @@ const CartPage = () => {
                 }
             }
         });
-        // navigate('/PaymentPage',{ state: { results: '111' } });
-
     };
 
     return (

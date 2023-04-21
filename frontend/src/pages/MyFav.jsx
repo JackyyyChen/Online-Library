@@ -54,7 +54,7 @@ function Collection() {
     };
 
 
-    // ----------真实的fetch请求-----------
+    // ----------click the folder-----------
     const handleFolderClick = async (folderName) => {
         const FolderAndUser = {name: folderName, username: username}
         console.log(FolderAndUser)
@@ -84,7 +84,7 @@ function Collection() {
     };
 
 
-    // ----------真实的fetch请求（获取所有收藏夹）-----------
+    // ----------get all folder-----------
     const fetchFolders = async () => {
         const giveUser = {username: username}
         const response = await fetchFunc('/getAllFolders/', 'POST', giveUser);
@@ -97,7 +97,7 @@ function Collection() {
         fetchFolders();
     }, [])
 
-    // ----------写死的数据-----------
+    // ----------data-----------
     // const handleFolderClick = async (id) => {
     //   // 使用静态数据模拟后端响应
     //   const folderData = {
@@ -111,16 +111,16 @@ function Collection() {
     //   setSelectedFolder(folderData);
     // };
 
-
+    //handleFolderClose
     const handleFolderClose = () => {
         setSelectedFolder(null);
         SetSelectedOtherUserFolder(null);
     };
-
+    //navigate to book detail page
     const handleItemClick = (bookId) => {
-        navigate(`/BookDetail/${bookId}`); // 更新为你的书本页面路
+        navigate(`/BookDetail/${bookId}`);
     };
-
+    //handleDelete
     const handlebookdelete = async (bookId, folderName) => {
         const giveBook = {username: username, book_id: bookId, name: folderName}
         const response = await fetchFunc('/deletebookcollection/', 'POST', giveBook);
@@ -133,20 +133,15 @@ function Collection() {
 
     }
 
-    // const handleDelete = (id) => {
-    //   console.log(`删除收藏夹:${id}`);
-    // }
-
-    //---------------------------一下功能是搜索用户-------------------------
+    //---------------------------search user-------------------------
     const [query, setQuery] = useState('');
     const [otherUser, setOtherUser] = useState('');
     const [otherUserFolder, SetOtherUserFolder] = useState(null);
     const [selectedOtherUserFolder, SetSelectedOtherUserFolder] = useState(null);
 
-    // ----------真实的fetch请求(获取其他用户的收藏夹)-----------
+    // ----------fetch other user file----------
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // 处理搜索逻辑
         console.log("Search for: ", query);
         setOtherUser(query);
         const otherUser = {username: query}
@@ -161,7 +156,7 @@ function Collection() {
         }
     };
 
-    //真实的fetch
+    // ----------click other user folder----------
     const handleOtherFolderClick = async (folderName) => {
         const FolderAndUser = {name: folderName, username: otherUser}
         console.log(FolderAndUser)
@@ -174,20 +169,19 @@ function Collection() {
             console.error('fetchData error:', error);
         }
     };
-
+    //set query
     const handleChange = (event) => {
         setQuery(event.target.value);
     };
 
-    //---------------------------一下功能是发送阅读书本数-------------------------
+    //---------------------------send books read-------------------------
     const [number, setNumber] = useState('');
     const handleNumberChange = (event) => {
         setNumber(event.target.value);
     };
-
+    // ----------send book number----------
     const handleBookNumber = async (event) => {
         event.preventDefault();
-        // 处理搜索逻辑
         console.log("Search for: ", number);
         const bookNumber = {bookNumber: number, username: username}
         console.log(bookNumber)
@@ -204,9 +198,7 @@ function Collection() {
             console.error('fetchData error:', error);
         }
     };
-
-    // const [alreadygodays,setalreadygodays]=useState('')
-    // const [remaindays,setremaindays]=useState('')
+    //---------------------------send user goal-------------------------
     const [userGoal, setUserGoal] = useState('');
     const fetchUserGoal = async () => {
         console.log(username)

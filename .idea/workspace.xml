@@ -2,108 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ef06e25-18f8-48f7-8785-08e15546e385" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bookmanagement/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bookmanagement/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/test_bookmanagement.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/9900database.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rating/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rating/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rating/migrations/0001_initial_migration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rating/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rating/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rating/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rating/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ratings.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Userapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Userapp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Userapp/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Userapp/migrations/0002_user_bio.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Userapp/migrations/0003_alter_user_managers_user_date_joined_user_first_name_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Userapp/migrations/0004_imagemodel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Userapp/migrations/0005_alter_user_options_alter_user_email_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Userapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Userapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Userapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Userapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookapp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookapp/copycsv.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookapp/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookapp/migrations/0002_remove_book_avg_rating_remove_book_description_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookapp/migrations/0003_alter_book_publication_date.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookapp/testdatabase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collection/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/App.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/AppCopy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/components/BookDetail.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/components/Nevi.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/components/RatingPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/components/RecomBook.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/components/SearchBar.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/components/Site.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/components/chatBox.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/Homepage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/Login.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/Login1.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/MyFav.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/Profile.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/Profile1.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/Profile3.26.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/Register.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/Register1.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/ResetPwpage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/SearchPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/SearchResultPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/pages/ShoppingCartpage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/service/fetchRequest.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/service/sendImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/材料/bookShelf.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/材料/chat_box1.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/src/材料/chat_box2.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-demo/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/migrations/0001_initial_migration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/migrations/0002_order.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/TestButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/App.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/TestButton.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_bookmanagement/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmanagement/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_bookmanagement/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_bookmanagement/import_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmanagement/import_script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_bookmanagement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmanagement/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_bookmanagement/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_bookmanagement/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmanagement/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/BookDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/BookDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/GameIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/GameIcon.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/GetCode.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/GetCode.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Nevi.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Nevi.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Order.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Order.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RatingPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RatingPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RecomBook.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RecomBook.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SearchBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Site.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Site.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/chatBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/chatBox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Homepage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Homepage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MyFav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MyFav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MyOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MyOrder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/PaymentPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/PaymentPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Profile3.26.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Profile_song.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Register1.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ResetPwpage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ResetPwpage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SearchResultPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SearchResultPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ShoppingCartpage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ShoppingCartpage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,19 +40,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2Ojkr8a8yoL7KRFjMZ7x0h8Jbcb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wesleyxiaoluo\Desktop\gitsubmit\capstone-project-9900f16awesley\frontend\src\pages" />
+      <recent name="C:\Users\wesleyxiaoluo\Desktop\gitsubmit\capstone-project-9900f16awesley\game" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="capstone-project-9900f16awesley" type="Python.DjangoServer" factoryName="Django server">
@@ -160,7 +87,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682081580880</updated>
-      <workItem from="1682081584184" duration="1199000" />
+      <workItem from="1682081584184" duration="3654000" />
+      <workItem from="1682101532135" duration="194000" />
+      <workItem from="1682101751245" duration="32000" />
+      <workItem from="1682101795415" duration="49000" />
+      <workItem from="1682101853845" duration="28000" />
     </task>
     <servers />
   </component>

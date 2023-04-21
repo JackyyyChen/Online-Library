@@ -11,16 +11,16 @@ from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.http import JsonResponse
 from rest_framework.utils import json
 
+
 @csrf_exempt
+# select all books in a collection
 def select_which_collection(request):
     if request.method == 'POST':
         json_data = request.body.decode('utf-8')
         data = json.loads(json_data)
         username = data['username']
-
         user = get_object_or_404(User, username=username)
         user_id = user.id
-
         have_this_user_exist = Collection.objects.filter(user_id=user_id).exists()
         if have_this_user_exist:
             user_collection = Collection.objects.filter(user_id=user_id)
@@ -31,8 +31,6 @@ def select_which_collection(request):
             return JsonResponse({'collections': result})
         else:
             return JsonResponse({'error': 'user does not exist!'})
-
-
 
 
 @csrf_exempt
@@ -66,6 +64,7 @@ def add_to_collection(request):
         else:
             return JsonResponse({'message': 'Collection does not exist!'})
 
+
 @csrf_exempt
 def add_new_collection(request):
     if request.method == 'POST':
@@ -73,12 +72,11 @@ def add_new_collection(request):
         data = json.loads(json_data)
         username = data['username']
         name = data['name']
-
         user = get_object_or_404(User, username=username)
         user_id = user.id
         Collection(user_id=user_id, name=name).save()
-
         return JsonResponse({'message': 'create success!'})
+
 
 @csrf_exempt
 def view_Fav(request):
@@ -97,6 +95,7 @@ def view_Fav(request):
 
         return JsonResponse({'collection_names': result})
 
+
 @csrf_exempt
 def view_other_Fav(request):
     if request.method == 'POST':
@@ -112,6 +111,7 @@ def view_other_Fav(request):
             if i.name not in result:
                 result.append(i.name)
         return JsonResponse({'collection_names': result})
+
 
 @csrf_exempt
 def view_collection(request):
@@ -142,11 +142,13 @@ def view_collection(request):
                 if book.book_id is not None:
                     this_book = Book.objects.get(id=book.book_id)
                     book_list[book.id] = {'id': book.book_id, 'title': this_book.title, 'author': this_book.author,
-                                        'publisher': this_book.publisher, 'publication_date': this_book.publication_date,
-                                        'category': this_book.category}
+                                          'publisher': this_book.publisher,
+                                          'publication_date': this_book.publication_date,
+                                          'category': this_book.category}
             return JsonResponse({'book_list': book_list})
         else:
             return JsonResponse({'error': 'Collection does not exist!'})
+
 
 @csrf_exempt
 def view_other_collection(request):
@@ -166,11 +168,13 @@ def view_other_collection(request):
                 if book.book_id is not None:
                     this_book = Book.objects.get(id=book.book_id)
                     book_list[book.id] = {'id': book.book_id, 'title': this_book.title, 'author': this_book.author,
-                                        'publisher': this_book.publisher, 'publication_date': this_book.publication_date,
-                                        'category': this_book.category}
+                                          'publisher': this_book.publisher,
+                                          'publication_date': this_book.publication_date,
+                                          'category': this_book.category}
             return JsonResponse({'book_list': book_list})
         else:
             return JsonResponse({'error': 'Collection does not exist!'})
+
 
 @csrf_exempt
 def delete_collection_book(request):
@@ -224,6 +228,7 @@ def show_top(request):
                                       'category': this_book.category}
         return JsonResponse({'book_list': book_list})
 
+
 @csrf_exempt
 def add_goal(request):
     if request.method == 'POST':
@@ -261,6 +266,7 @@ def count_remain_days(user_id):
     return {'already_go_days': already_go_days, 'remain_days': remain_days,
             'planned_finish_date': planned_finish_date}
 
+
 @csrf_exempt
 def see_remain_days(request):
     if request.method == 'POST':
@@ -280,4 +286,3 @@ def see_remain_days(request):
             return JsonResponse({'success': remain_days})
         except:
             return JsonResponse({'error': 'cannot create'})
-

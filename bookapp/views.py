@@ -31,19 +31,21 @@ def books_paginator(books, page):
     books = paginator.page(page)
     return books
 @csrf_exempt
+# get all books
 def book_quary(request):
     if request.method == 'GET':
         connection = connect_to_mysql()
         data = get_data_from_mysql(connection)
         connection.close()
         user_id = 15
+        # recommend books
         quary_data = user_based_recommendation(data, user_id)
         for item in quary_data:
             print(item)
         print(f"for user {user_id} recommended ID：",quary_data)
         temp_dict={}
         send_list=[]
-        # print(quary_data)
+        # get book info
         for book_id in quary_data:
             book = Book.objects.get(id=int(book_id))
             temp_dict['title'] = book.title
@@ -54,7 +56,7 @@ def book_quary(request):
             send_list.append(temp_dict)
             temp_dict = {}
         return JsonResponse({"book": send_list})
-
+# get top n books
 def get_top_n(predictions, n=500):
     top_n = {}
     for uid, iid, true_r, est, _ in predictions:
@@ -67,7 +69,7 @@ def get_top_n(predictions, n=500):
         top_n[uid] = user_ratings[:n]
 
     return top_n
-
+# get all books from top n users
 def get_top_n_books(top_n, n=50):
     all_books = []
     for uid, user_ratings in top_n.items():
@@ -76,6 +78,7 @@ def get_top_n_books(top_n, n=50):
     top_n_books = list(set(all_books))[:n]
 
     return top_n_books
+# load data
 def load_data(data):
     df = pd.DataFrame(data)
     reader = Reader(rating_scale=(1, 10))
@@ -91,7 +94,7 @@ def load_data(data):
     result = [iid for (iid, _) in top_10_books]
     return result
 
-
+# connect to mysql
 def connect_to_mysql():
     connection = pymysql.connect(
         host="localhost",
@@ -100,7 +103,7 @@ def connect_to_mysql():
         database="9900book"
     )
     return connection
-
+# get data from mysql
 def get_data_from_mysql(connection):
     cursor = connection.cursor()
     cursor.execute("SELECT user_id, isbn_id, rating FROM rating_rating")
@@ -120,7 +123,7 @@ def get_data_from_mysql(connection):
 
     return matrix
 
-
+# compute similarity
 def user_similarity(matrix):
     similarity_matrix = np.zeros((matrix.shape[0], matrix.shape[0]))
     for i in range(matrix.shape[0]):
@@ -137,7 +140,7 @@ def user_similarity(matrix):
 
     return similarity_matrix
 
-
+# recommend books
 def user_based_recommendation(matrix, user_id, top_n=15):
     similarity_matrix = user_similarity(matrix)
     user_ratings = matrix[user_id]
@@ -149,6 +152,7 @@ def user_based_recommendation(matrix, user_id, top_n=15):
 
 
 @csrf_exempt
+# get book detail
 def book_detail(request):
     if request.method == 'POST':
         json_data = request.body.decode('utf-8')
@@ -157,6 +161,7 @@ def book_detail(request):
         get_book = Book.objects.get(id=book_id)
 
         review_list = []
+        # check if the book has reviews
         get_book_reviews_exist = Reviews.objects.filter(book_id=book_id).exists()
         if get_book_reviews_exist:
             get_book_reviews = Reviews.objects.filter(book_id=book_id)
@@ -175,12 +180,13 @@ def book_detail(request):
 
 
 @csrf_exempt
+# search book
 def book_search(request):
     if request.method == 'POST':
         json_data = request.body.decode('utf-8')
         data = json.loads(json_data)
         books = []
-
+        # check if the book exists
         if 'avg_rating' in data:
             avg_rating = data['avg_rating']
             if 'category' in data and 'title' not in data and 'author' not in data:
@@ -237,7 +243,7 @@ def book_search(request):
                 return JsonResponse({"error": 'No books'})
             else:
                 return JsonResponse({'book_list': book_list})
-
+        # check if the book exists
         elif 'avg_rating' not in data:
             if 'category' in data and 'title' not in data and 'author' not in data:
                 category = data['category']

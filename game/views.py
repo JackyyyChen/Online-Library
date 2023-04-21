@@ -3,14 +3,13 @@ import random
 
 from django.core.serializers import serialize
 
-
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
-
 
 from Userapp.models import User
 from game.models import count_score, game_questions
 from django.http import JsonResponse
+
 
 @csrf_exempt
 def add_score(request):
@@ -24,12 +23,14 @@ def add_score(request):
             old_score = user.score
             new_score = old_score + score
             user.score = new_score
-            return JsonResponse({'status': 'success', 'message': 'score updated successfully', 'new_score': user.score, 'username': username})
+            user.save()
+
+            return JsonResponse({'status': 'success', 'message': 'score updated successfully', 'new_score': user.score,
+                                 'username': username})
         except:
             user = count_score.objects.create(username=username, score=score)
-            return JsonResponse({'status': 'success', 'message': 'score added successfully', 'new_score': score, 'username': username})
-
-
+            return JsonResponse(
+                {'status': 'success', 'message': 'score added successfully', 'new_score': score, 'username': username})
 
 
 @csrf_exempt
@@ -51,19 +52,18 @@ def leaderboard_score(request):
             del item['model']
             del item['pk']
 
-        return JsonResponse({"score_list":score_list}, safe=False)
+        return JsonResponse({"score_list": score_list}, safe=False)
+
 
 @csrf_exempt
 def game_question(request):
     if request.method == 'POST':
         print("hello")
         question = game_questions.objects.all()
-
-        jsondata= serialize('json', question, fields=('title', 'question', 'opt1', 'opt2', 'opt3', 'opt4', 'answer'))
-
+        jsondata = serialize('json', question, fields=('title', 'question', 'opt1', 'opt2', 'opt3', 'opt4', 'answer'))
         question_list = json.loads(jsondata)
         # question_list = random.sample(question_list, 3)
-        question_list=question_list[:4]
+        question_list = question_list[:4]
         print(question_list)
         print([item['fields']['answer'] for item in question_list])
         # question_list = random.sample(question_list['field'], 3)
@@ -74,9 +74,5 @@ def game_question(request):
             item['answer'] = fields['answer']
             del item['model']
             del item['pk']
-        return JsonResponse({'question_list':question_list}, safe=False)
-
-
-
-
+        return JsonResponse({'question_list': question_list}, safe=False)
 

@@ -12,26 +12,23 @@ const useStyles = makeStyles(() => ({
 }));
 
 const YourOrders = () => {
+    //define state
     const classes = useStyles();
     const [orders, setOrders] = useState([]);
     const [sortOrder, setSortOrder] = useState([]);
     const [userExist, setUserExist] = useState('')
 
-
+    //fetch data
     const fetchOrders = async () => {
         const user = localStorage.getItem('user')
         setUserExist(user)
         const userName = {username: user}
         console.log(userName)
-        // try {
         const response = await fetchFunc('/getOrder/', 'POST', userName);
         const data = await response.json();
         setOrders(data);
-        // } catch (error) {
-        //   console.error('Error fetching orders:', error);
-        // }
     };
-
+    //fetch sort data
     useEffect(() => {
         fetchOrders();
     }, []);
@@ -45,7 +42,7 @@ const YourOrders = () => {
     }, [orders]);
     console.log(sortOrder)
 
-
+    //delete order
     const deleteOrder = async (orderId) => {
         // alert(orderId);
         const user = localStorage.getItem('user')
@@ -59,11 +56,6 @@ const YourOrders = () => {
                 alert(data.message)
             }
             await fetchOrders();
-
-
-            // if (response.statusCode === 200) {
-            //   fetchOrders();
-            // }
         } catch (error) {
             console.error('Error deleting order:', error);
         }

@@ -10,39 +10,27 @@ import Select from '@mui/material/Select';
 const CarSearchPage = () => {
     const [keywords, setKeywords] = useState({});
     const navigate = useNavigate();
-    // 添加下拉框
-    // const [book, setBook] = useState('');
     const [selectBook, setSelectBook] = useState('');
-    // const [rate, setRate] = useState('');
     const [selectRate, setSelectRate] = useState('');
-    // const handleChange = (event) => {
-    //   setValue(event.target.value);
-    // };
-    // console.log(book)
-
-    // const handleSelectChange = (event) => {
-    //   setSelectValue(event.target.value);
-    //   setValue(event.target.value);
-    // };
-
+    //handle change
     const handleChange = (event) => {
         setKeywords({...keywords, [event.target.name]: event.target.value});
     };
 
-    // 处理选择的book type
+    //handel type change
     const handleTypeChange = (event) => {
         setSelectBook(event.target.value);
         // setBook(event.target.value);
         setKeywords({...keywords, [event.target.name]: event.target.value});
     };
 
-    // 处理选择的rating
+    // handle rating change
     const handleRatingChange = (event) => {
         setSelectRate(event.target.value);
         // setRate(event.target.value);
         setKeywords({...keywords, [event.target.name]: event.target.value});
     };
-
+    //handle submit
     const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(keywords);
