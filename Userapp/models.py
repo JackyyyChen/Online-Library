@@ -8,6 +8,7 @@ class User(AbstractUser):
     email = models.EmailField(verbose_name="Email")
     created_time = models.DateTimeField(auto_now_add=True)
     bio =models.TextField(max_length=500,blank=True)
+    isagent = models.BooleanField(default=False)
     class Meta:
         verbose_name_plural = "User"
         verbose_name = "User"
@@ -20,3 +21,16 @@ class ImageModel(models.Model):
 
     def __str__(self):
         return self.image.name
+
+
+class Questions(models.Model):
+    question = models.CharField(max_length=1000, null=True, default='')
+    answer = models.CharField(max_length=1000,null=True, default='')
+    def __str__(self):
+        return self.question
+
+class UserFeedback(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='feedback')
+    question = models.CharField(max_length=1000, null=True, default='')
+    def __str__(self):
+        return self.question

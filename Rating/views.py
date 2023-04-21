@@ -1,53 +1,75 @@
+import json
+
+from django.db.models import Avg
+from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404
+
+# Create your views here.
+from django.views.decorators.csrf import csrf_exempt
+
+from bookapp.models import Book
+from Rating.models import Rating, Reviews
+from mf import *
+import pandas as pd
+
+from mf.Matrix_Factorization import mfresult
+
+from Userapp.models import User
+
+def get_recommandation_list():
+    # get all ratings
+    ratings = Rating.objects.all()
+    # convert to dataframe
+    ratings_df = pd.DataFrame(ratings.values())
+    print(ratings_df)
+    recommendations = mfresult(ratings_df)
+    return recommendations
+
+
 from django.db.models import Avg
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from bookapp.models import Book
+from Userapp.models import User
 from Rating.models import Rating
+from Rating.models import Reviews
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
+from rest_framework.utils import json
+from django.http import JsonResponse
 
 
-def book_average_rating(book):
-    average_rating = Rating.objects.filter(isbn=book).aggregate(Avg('rating'))['rating__avg']
+
+def book_average_rating(id):
+    rating = Rating.objects.filter(isbn_id=id)
+    total = 0
+    num = 0
+    for i in rating:
+        total += i.rating
+        num += 1
+    average_rating = total/num
     return average_rating
 
-# def get_books_above_user_rating(user_rating):
-#     # 使用 join 操作将 Book 和 Rating 表连接起来，并筛选出高于用户给定分数的图书
-#     books_above_user_rating = Book.objects.filter(rating__rating__gte=user_rating).join(Rating)
-#
-#     return books_above_user_rating
+@csrf_exempt
+def add_review_and_rating(request):
+    if request.method == 'POST':
+        json_data = request.body.decode('utf-8')
+        data = json.loads(json_data)
+        username = data['username']
+        book_id = data['book_id']
+        review = data['Review']
+        rating = data['Rating']
 
+        user = get_object_or_404(User, username=username)
+        Reviews(user_id=user.id, book_id=book_id, reviews=review).save()
 
-# def book_average_rating(book_isbn):
-#
-#     average_rating = Rating.objects.filter(isbn_id=book_isbn).aggregate(Avg('rating'))['rating__avg']
-#     if average_rating is not None:
-#         return round(average_rating, 2)
-#     else:
-#         return 0.0
+        this_rating_exist = Rating.objects.filter(user_id=user.id, isbn_id=book_id).exists()
+        if this_rating_exist:
+            this_rating = Rating.objects.get(user_id=user.id, isbn_id=book_id)
+            this_rating.rating = rating
+            this_rating.save()
+        else:
+            Rating(user_id=user.id, isbn_id=book_id, rating=rating).save()
 
-# def book_average_rating(book_isbn):
-#     try:
-#         book = Book.objects.get(isbn=book_isbn)
-#     except Book.DoesNotExist:
-#         return None
-#     average_rating = Rating.objects.filter(isbn_id=book.isbn).aggregate(Avg('rating'))['rating__avg']
-#     if average_rating is None:
-#         return 0.0
-#     return round(float(average_rating), 2)
+        return JsonResponse({'message': 'success!'})
 
-# def book_average_rating(isbn):
-#     # 使用 ISBN 编号来筛选评分信息
-#     average_rating = Rating.objects.filter(isbn_id=isbn).aggregate(Avg('rating'))['rating__avg']
-#     if average_rating is not None:
-#         return round(average_rating, 2)
-#     else:
-#         return 0.0
-
-# def get_books_above_avg_rating(avg_rating):
-#     # 计算所有图书的平均评分
-#     all_books_avg_rating = Book.objects.aggregate(Avg('rating'))['rating__avg']
-#
-#     # 筛选高于给定平均分的图书
-#     books_above_avg_rating = Book.objects.filter(rating__gt=avg_rating)
-#
-#     return books_above_avg_rating

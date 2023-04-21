@@ -4,4 +4,8 @@ from django.contrib import admin
 from django.contrib import admin
 from bookapp.models import Book
 
-admin.site.register(Book)
+
+class BookAdmin(admin.ModelAdmin):
+    search_fields = ['isbn','title', 'author', 'publisher', 'price', 'description']
+    list_filter = ['author']
+admin.site.register(Book, BookAdmin)

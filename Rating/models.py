@@ -13,3 +13,8 @@ class Rating(models.Model):
 
     def __str__(self):
         return f"Rating {self.rating} by user {self.user_id} for book {self.isbn}"
+
+class Reviews(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    reviews = models.CharField(max_length=1000)
