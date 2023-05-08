@@ -99,13 +99,6 @@ DATABASES = {
         'PASSWORD': 'mysql', # password
         'HOST': 'localhost', # 数据库主机
         'PORT': '3297', # 数据库端口（默认为3306）
-        'OPTIONS': {
-        'charset': 'utf8mb4',
-        'autocommit': True,
-        'sql_mode': 'traditional',
-        },
-        'CONN_MAX_AGE': 3600,
-        'USE_TZ': False,
     }
 
 }

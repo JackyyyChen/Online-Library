@@ -9,10 +9,10 @@ from django.views.decorators.csrf import csrf_exempt
 
 from bookapp.models import Book
 from Rating.models import Rating, Reviews
-from mf import *
+
 import pandas as pd
 
-from mf.Matrix_Factorization import mfresult
+
 
 from Userapp.models import User
 
