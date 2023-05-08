@@ -8,13 +8,13 @@ from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 
 from bookapp.models import Book
-from Rating.models import Rating, Reviews
+from rating.models import Rating, Reviews
 
 import pandas as pd
 
 
 
-from Userapp.models import User
+from userapp.models import User
 
 def get_recommandation_list():
     # get all ratings
@@ -31,9 +31,9 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from bookapp.models import Book
-from Userapp.models import User
-from Rating.models import Rating
-from Rating.models import Reviews
+from userapp.models import User
+from rating.models import Rating
+from rating.models import Reviews
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from rest_framework.utils import json
 from django.http import JsonResponse
@@ -58,7 +58,7 @@ def add_review_and_rating(request):
         username = data['username']
         book_id = data['book_id']
         review = data['Review']
-        rating = data['Rating']
+        rating = data['rating']
 
         user = get_object_or_404(User, username=username)
         Reviews(user_id=user.id, book_id=book_id, reviews=review).save()

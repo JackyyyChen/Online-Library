@@ -15,7 +15,7 @@ from django.core.files.storage import default_storage
 from django.core.mail import send_mail
 from django.db.models import Q
 
-from Userapp.models import User, ImageModel, Questions, UserFeedback
+from userapp.models import User, ImageModel, Questions, UserFeedback
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import UserManager
@@ -25,8 +25,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
-from Userapp.models import User
-from Collection.models import Collection, Finished, Goalnumber
+from userapp.models import User
+from collection.models import Collection, Finished, Goalnumber
 from shopping.models import Cart, Order
 from bookmanagement import settings
 from io import BytesIO
@@ -34,7 +34,7 @@ from PIL import Image
 import base64
 
 
-from Userapp.models import User
+from userapp.models import User
 
 
 def my_view(request):

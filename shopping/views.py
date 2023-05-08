@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
 from bookapp.models import Book
-from Userapp.models import User
+from userapp.models import User
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.http import JsonResponse
 from rest_framework.utils import json

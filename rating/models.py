@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 from django.db import models
-from Userapp.models import User
+from userapp.models import User
 from bookapp.models import Book
 
 

@@ -4,9 +4,9 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
-from Userapp.models import User
+from userapp.models import User
 from bookapp.models import Book
-from Collection.models import Collection, Goalnumber, Finished
+from collection.models import Collection, Goalnumber, Finished
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.http import JsonResponse
 from rest_framework.utils import json
@@ -62,7 +62,7 @@ def add_to_collection(request):
                                      'publisher': this_book.publisher, 'publication_date': this_book.publication_date,
                                      'category': this_book.category})
         else:
-            return JsonResponse({'message': 'Collection does not exist!'})
+            return JsonResponse({'message': 'collection does not exist!'})
 
 
 @csrf_exempt
@@ -147,7 +147,7 @@ def view_collection(request):
                                           'category': this_book.category}
             return JsonResponse({'book_list': book_list})
         else:
-            return JsonResponse({'error': 'Collection does not exist!'})
+            return JsonResponse({'error': 'collection does not exist!'})
 
 
 @csrf_exempt
@@ -173,7 +173,7 @@ def view_other_collection(request):
                                           'category': this_book.category}
             return JsonResponse({'book_list': book_list})
         else:
-            return JsonResponse({'error': 'Collection does not exist!'})
+            return JsonResponse({'error': 'collection does not exist!'})
 
 
 @csrf_exempt
@@ -203,7 +203,7 @@ def delete_collection_book(request):
                                           'category': this_book.category}
             return JsonResponse({'message': 'delete success!', 'book_list': book_list})
         else:
-            return JsonResponse({'error': 'Collection does not exist!'})
+            return JsonResponse({'error': 'collection does not exist!'})
 
 
 @csrf_exempt

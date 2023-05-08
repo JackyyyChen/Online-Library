@@ -14,8 +14,8 @@ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install npm
 cd my-app
-npm i -force
-npm audit fix -force
+npm install --force
+npm audit fix --force
 
 # Back end
 cd ..
@@ -42,6 +42,4 @@ pip install spacy
 python -m spacy download en_core_web_md
 pip install rwkv
 pip install surprise
-python3 manage.py makemigrations
-python3 manage.py migrate
-echo "from User_app.models import *;  User.objects.create_superuser('admin', 'juehaoluo@gmail.com', '123')" | python3 manage.py shell
+pip install torch

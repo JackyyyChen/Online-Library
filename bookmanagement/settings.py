@@ -41,15 +41,15 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'bookmanagement',
-    'Userapp',
+    'userapp',
     'bookapp',
     'shopping',
-    'Rating',
+    'rating',
     'channels',
     'game',
-    'Collection',
+    'collection',
 ]
-AUTH_USER_MODEL = 'Userapp.User'
+AUTH_USER_MODEL = 'userapp.User'
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',

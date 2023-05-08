@@ -38,7 +38,7 @@ const RatingPage = (props) => {
     // handleSubmit
     const handleSubmit = async () => {
         // 提交评分和评论
-        // console.log('Rating:', rating);
+        // console.log('rating:', rating);
         // console.log('Review:', review);
         if (rating == 0) {
             alert('Please enter scores');
@@ -103,7 +103,7 @@ const RatingPage = (props) => {
                             >
                                 <CardContent>
                                     <Typography variant="body2"> {`Review: ${review}`}</Typography>
-                                    {/*<Typography variant="body2"> {`Rating: ${this.state.selectedNumber}`}</Typography>*/}
+                                    {/*<Typography variant="body2"> {`rating: ${this.state.selectedNumber}`}</Typography>*/}
                                 </CardContent>
                             </Card>
 

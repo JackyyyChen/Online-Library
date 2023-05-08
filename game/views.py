@@ -6,7 +6,7 @@ from django.core.serializers import serialize
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 
-from Userapp.models import User
+from userapp.models import User
 from game.models import count_score, game_questions
 from django.http import JsonResponse
 

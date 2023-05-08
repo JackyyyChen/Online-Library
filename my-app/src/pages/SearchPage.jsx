@@ -130,7 +130,7 @@ const CarSearchPage = () => {
                         {/* <Grid item xs={12} sm={6}>
             <TextField
               name="avg_rating"
-              label="Average Rating"
+              label="Average rating"
               fullWidth
               onChange={handleChange}
             />

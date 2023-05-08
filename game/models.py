@@ -1,5 +1,5 @@
 from django.db import models
-from Userapp.models import User
+from userapp.models import User
 # Create your models here.
 class count_score(models.Model):
     game_user_id = models.AutoField(primary_key=True)

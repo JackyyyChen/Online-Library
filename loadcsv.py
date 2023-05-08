@@ -27,9 +27,10 @@ def connect_to_mysql():
         user="root",
         password="mysql",
         database="9900database",
-        local_infile=1
+        local_infile=True
     )
     return connection
+
 
 query0 = "ALTER TABLE userapp_user AUTO_INCREMENT = 1;"
 
@@ -38,15 +39,15 @@ query_a="delete from rating_rating;"
 query_b="delete from rating_reviews;"
 query_c="delete from game_count_score;"
 query_d="delete from game_game_questions;"
-query_e="delete from userapp_questions;"
+query_e="delete from Userapp_questions;"
 query_f="delete from bookapp_book;"
 query_g="delete from userapp_user;"
 
 query1= "ALTER TABLE bookapp_book AUTO_INCREMENT = 1;"
 query2 = f"LOAD DATA LOCAL INFILE '{bookapp_book_file}' INTO TABLE bookapp_book " \
         "CHARACTER SET latin1 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\\r\\n' IGNORE 1 ROWS (isbn,title,author,publication_date,publisher,url,category,price,description);"
-query3= "ALTER TABLE userapp_questions AUTO_INCREMENT = 1;"
-query4 = f"LOAD DATA LOCAL INFILE '{userapp_questions_file}' INTO TABLE userapp_questions " \
+query3= "ALTER TABLE Userapp_questions AUTO_INCREMENT = 1;"
+query4 = f"LOAD DATA LOCAL INFILE '{userapp_questions_file}' INTO TABLE Userapp_questions " \
         "CHARACTER SET latin1 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\\n' IGNORE 1 ROWS (question,answer);"
 query5= "ALTER TABLE game_game_questions AUTO_INCREMENT = 1;"
 query6 = f"LOAD DATA LOCAL INFILE '{game_game_questions_file}' INTO TABLE game_game_questions " \

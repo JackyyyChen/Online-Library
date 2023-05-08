@@ -12,9 +12,9 @@ from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from rest_framework.utils import json
 from django.db.models import Q
 
-from Rating.models import Rating, Reviews
+from rating.models import Rating, Reviews
 from bookapp.models import Book
-from Rating.views import book_average_rating, get_recommandation_list
+from rating.views import book_average_rating, get_recommandation_list
 # from .models import Book
 # from django.db.models import Avg
 from surprise import SVD, KNNBasic, accuracy

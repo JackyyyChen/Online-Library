@@ -13,7 +13,7 @@ from django.urls import path
 from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.auth import AuthMiddlewareStack
 
-from Userapp import consumers
+from userapp import consumers
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bookmanagement.settings')
 
 application = ProtocolTypeRouter({
