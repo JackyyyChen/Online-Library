@@ -1,0 +1,34 @@
+Week 1
+We created our own group, named our team together, and decided on a project theme of a book recommendation system. Joined the Jira group and the GitHub group.
+
+Week 2
+Offline, we had a discussion and decided together on our project theme: book recommendation system. And together we designed the functions we want to accomplish with this system. The front-end and back-end frameworks were defined, using react for the front-end and djangok for the back-end, while the database was operated by mysql.
+On the lab, we discussed our ideas and the features we wanted to implement with tutor, who confirmed our ideas. We uploaded the features to be implemented to jira.
+
+Week 3
+We assigned the project to individual team members, and I was responsible for writing the back-end and needed to connect to the database and work with the front-end people to implement the front- and back-end responses.
+After the assignment, the parts I need to complete are the initial user personal center, forgotten password, email verification, search function, shopping cart function, order function and collection function.
+During this week, we also completed the proposal together. I finished a part of the proposal.
+
+Week 4
+During this week, I worked with the team leader to build the django framework and design the database framework, and discussed how to design the data structure with the students in charge of the database. I also worked with the front-end students to design the pages and the details of the functionality. I finished the forgot password function and the preliminary user center function during this week.
+
+Week 5
+We finished all the work on sprint1, and I started to conceptualize how to complete the search function. I started working with the database students to find the data I wanted to build the tables. We successfully completed demoA.
+On the lab, tutor gave us a lot of useful advice. For example, our design needs to consider more user security. We had a meeting immediately after the class to discuss how to improve the vulnerabilities together.
+
+Week 6
+It's been a flexible week, but we're still working hard. This week I changed the forgot password feature and added the email security verification feature with the captain.
+
+Week 7
+Based on previous feedback from tutor, I improved the user security features and added a lot of login detection feedback and database lookup information feedback.
+While fixing the previous deficiencies, I also finished the search function and started writing the shopping cart function.
+
+Week 8
+We finished demoB as requested and continued to implement the project features. During this week, I completed the shopping cart function as well as the order function.
+
+Week 9
+Following the feedback from the demoB tutor, I designed the search function into a better search system, not only the search results can be sorted according to different variables, but also a more complete quantity adjustment mode option has been added to the shopping cart. Meanwhile, I finished the collection function this week.
+
+Week 10
+During this week, we worked on stringing together the previous features and beautifying the pages. And I finished a part of the report.

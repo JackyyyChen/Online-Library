@@ -1,0 +1,29 @@
+Week 1
+We created our group, discussed the project together, and decided on the project theme of the book recommendation system. Joined the Jira group and the GitHub group.
+
+Week 2
+We had a meeting to discuss the project. The react framework is determined for the front end, the Django framework for the back end, and MySQL for the database. In addition, we discussed user stories and sprints for the project.
+
+Week 3
+We met to discuss the functionalities of the project and got the tutor to agree. I completed part of the proposal.
+
+Week 4
+We have already started writing the code part. Hanxian Chen and I finished the front-end code together. The login, register, and reset password pages are complete.
+
+Week 5
+We've done everything in Sprint One. Hanxian Chen and I completed the front end, including the user login page, user registration page, and user profile page. We held a meeting about retrospective A after demo A. The purpose was to review and summarize the content of sprint 1 and plan the content of sprint 2.
+
+Week 6
+It's a flexible week, but we're still working hard. This week we started the core of Sprint 2, and I worked on the front end.
+
+Week 7
+According to the tutor's feedback and suggestions, I improved the previous content. I refined the login, register, and reset password pages.
+
+Week 8
+Hanxian Chen and I finished the whole front end of Sprint 2 together. We made a retrospective B after demo B to review and summarize Sprint 2 and make a plan for Sprint 3.
+
+Week 9
+We started the core function of Sprint Three, and I worked on the front end.
+
+Week 10
+This is the last week, and we've done all the coding and written the project report.

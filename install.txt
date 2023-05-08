@@ -1,0 +1,47 @@
+#!/bin/bash
+
+sudo apt-get update
+
+# Database
+sudo apt-get install mysql-server
+sudo service mysql start
+echo "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'mysql'; FLUSH PRIVILEGES;" | sudo mysql -u root
+mysql -u root -p mysql -e "create database 9900database"
+
+# Front end
+sudo snap install curl
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install npm
+cd my-app
+npm i -force
+npm audit fix -force
+
+# Back end
+cd ..
+sudo apt-get update
+sudo apt-get install python3-pip
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get install python3.10
+sudo pip3 install virtualenv
+virtualenv venv --python=python3.10
+
+source venv/bin/activate
+pip install django 
+pip install pymysql
+pip install djangorestframework
+pip install django-cors-headers
+pip install channels
+sudo apt-get install python3.10-dev
+sudo apt-get install default-libmysqlclient-dev
+pip install mysqlclient 
+pip install pandas
+pip install Pillow
+pip install prompt_toolkit
+pip install spacy
+python -m spacy download en_core_web_md
+pip install rwkv
+pip install surprise
+python3 manage.py makemigrations
+python3 manage.py migrate
+echo "from User_app.models import *;  User.objects.create_superuser('admin', 'juehaoluo@gmail.com', '123')" | python3 manage.py shell
