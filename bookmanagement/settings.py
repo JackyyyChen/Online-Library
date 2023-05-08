@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'your secret key'
+SECRET_KEY = 'django-insecure-!p&+!gb53lcluv7)5ok_3d4m1-*2w-o4b2e8^@*gw)3mab(co_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -94,11 +94,11 @@ WSGI_APPLICATION = 'bookmanagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'your database name', # database name
+        'NAME': '9900database', # database name
         'USER': 'root', # client name
-        'PASSWORD': 'your password', # password
+        'PASSWORD': 'mysql', # password
         'HOST': 'localhost', # 数据库主机
-        'PORT': '3306', # 数据库端口（默认为3306）
+        'PORT': '3297', # 数据库端口（默认为3306）
         'OPTIONS': {
         'charset': 'utf8mb4',
         'autocommit': True,
@@ -171,11 +171,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your email' # your email
-EMAIL_HOST_PASSWORD = 'your password' # your password
+EMAIL_HOST_USER = 'luojuehao@gmail.com'
+EMAIL_HOST_PASSWORD = 'ojxubhkrdgaywnwy'
 
 
-MEDIA_ROOT = 'E:\\test_bookmanagement\\images'
+MEDIA_ROOT = 'images'
 MEDIA_URL = '/media/'
 
 import os
