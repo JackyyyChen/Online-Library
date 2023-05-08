@@ -25,7 +25,7 @@ import bookapp
 import shopping.views
 import game.views
 import Rating.views
-from api import LoginView,LogoutView
+# from api import LoginView,LogoutView
 # from Userapp.views import double_number,home_view,my_view,html_view,App,test
 import Userapp.views
 from bookapp.views import book_quary
