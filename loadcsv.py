@@ -39,15 +39,18 @@ query_a="delete from rating_rating;"
 query_b="delete from rating_reviews;"
 query_c="delete from game_count_score;"
 query_d="delete from game_game_questions;"
-query_e="delete from Userapp_questions;"
-query_f="delete from bookapp_book;"
-query_g="delete from userapp_user;"
+query_e="delete from userapp_questions;"
 
+query_f="delete from collection_collection;"
+query_g="delete from userapp_user;"
+query_h="delete from shopping_cart;"
+query_i="delete from shopping_order;"
+query_j="delete from bookapp_book;"
 query1= "ALTER TABLE bookapp_book AUTO_INCREMENT = 1;"
 query2 = f"LOAD DATA LOCAL INFILE '{bookapp_book_file}' INTO TABLE bookapp_book " \
         "CHARACTER SET latin1 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\\r\\n' IGNORE 1 ROWS (isbn,title,author,publication_date,publisher,url,category,price,description);"
-query3= "ALTER TABLE Userapp_questions AUTO_INCREMENT = 1;"
-query4 = f"LOAD DATA LOCAL INFILE '{userapp_questions_file}' INTO TABLE Userapp_questions " \
+query3= "ALTER TABLE userapp_questions AUTO_INCREMENT = 1;"
+query4 = f"LOAD DATA LOCAL INFILE '{userapp_questions_file}' INTO TABLE userapp_questions " \
         "CHARACTER SET latin1 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\\n' IGNORE 1 ROWS (question,answer);"
 query5= "ALTER TABLE game_game_questions AUTO_INCREMENT = 1;"
 query6 = f"LOAD DATA LOCAL INFILE '{game_game_questions_file}' INTO TABLE game_game_questions " \
@@ -61,8 +64,8 @@ query10 = f"LOAD DATA LOCAL INFILE '{rating_rating_file}' INTO TABLE rating_rati
 query11= "ALTER TABLE rating_reviews AUTO_INCREMENT = 1;"
 query12 = f"LOAD DATA LOCAL INFILE '{reviews_file}' INTO TABLE rating_reviews " \
         "CHARACTER SET latin1 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\\n' IGNORE 1 ROWS (user_id, book_id, reviews);"
-# querylist=[query_a,query_b,query_c,query_d,query_e,query_f,query_g]
-querylist=[query_a,query_b,query_c,query_d,query_e,query_f,query1,query2,query3,query4,query5,query6,query7,query8,query9,query10,query11,query12]
+# querylist=[query_a,query_b,query_c,query_d,query_e,query_f,query_g,query_h,query_i,query_j]
+querylist=[query0 ,query1,query2,query3,query4,query5,query6,query7,query8,query9,query10,query11,query12]
 def loadfile(connection):
     cursor = connection.cursor()
     cursor.execute(query0)

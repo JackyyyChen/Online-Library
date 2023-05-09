@@ -9,13 +9,14 @@ echo "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my
 mysql -u root -p mysql -e "create database 9900database"
 
 # Front end
+sudo apt-get update
 sudo snap install curl
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install npm
 cd my-app
 npm install --force
-npm audit fix --force
+
 
 # Back end
 cd ..

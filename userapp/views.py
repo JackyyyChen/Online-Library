@@ -288,7 +288,7 @@ def find_similar_question(input_text, username):
     try:
         user_id = User.objects.get(username=username).id
     except User.DoesNotExist:
-        return "I'm sorry, PLEASE LOGIN FIRST."
+        return on_message(input_text)
     for question in Questions.objects.all():
         if question.id not in vector_dict:
             continue
