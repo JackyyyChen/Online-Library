@@ -15,6 +15,7 @@ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install npm
 cd my-app
+sudo chmod -R a+w ./node_modules/
 npm install --force
 
 
@@ -44,3 +45,8 @@ python -m spacy download en_core_web_md
 pip install rwkv
 pip install surprise
 pip install torch
+venv/bin/python3 manage.py makemigrations
+venv/bin/python3 manage.py migrate
+mysql -uroot -p'mysql' -e "SET GLOBAL local_infile=1;"
+venv/bin/python3 loadcsv.py
+venv/bin/python3 manage.py createsuperuser

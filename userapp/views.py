@@ -262,9 +262,7 @@ def send_verification_code(request):
 
 
 # ===========================chatbot=================================
-from ChatRWKV.v2.chat import on_message
-import spacy
-nlp = spacy.load('en_core_web_md')
+
 
 def create_vector_dict():
     vector_dict = {}
@@ -274,10 +272,16 @@ def create_vector_dict():
         vector_dict[question.id] = question_doc.vector
 
     return vector_dict
-print('Loading spaCy model...')
-vector_dict = create_vector_dict()
-print('spaCy model loaded.')
-print('\n')
+
+if settings.RUNSERVER:
+    import spacy
+    nlp = spacy.load('en_core_web_md')
+    print('Loading spaCy model...')
+    vector_dict = create_vector_dict()
+    print('spaCy model loaded.')
+    print('\n')
+    from ChatRWKV.v2.chat import on_message
+
 def cosine_similarity(a, b):
     return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 
