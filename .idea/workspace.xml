@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2ef06e25-18f8-48f7-8785-08e15546e385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookmanagement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmanagement/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.txt" beforeDir="false" afterPath="$PROJECT_DIR$/install.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loadcsv.py" beforeDir="false" afterPath="$PROJECT_DIR$/loadcsv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/other_command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/chatbot_requirements_and_important_file" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -47,8 +42,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\wesleyxiaoluo\Desktop\gitsubmit\capstone-project-9900f16awesley\chatbot_requirements_and_important_file" />
       <recent name="C:\Users\wesleyxiaoluo\Desktop\gitsubmit\capstone-project-9900f16awesley" />
+      <recent name="C:\Users\wesleyxiaoluo\Desktop\gitsubmit\capstone-project-9900f16awesley\my-app" />
+      <recent name="C:\Users\wesleyxiaoluo\Desktop\gitsubmit\capstone-project-9900f16awesley\chatbot_requirements_and_important_file" />
       <recent name="C:\Users\wesleyxiaoluo\Desktop\gitsubmit\capstone-project-9900f16awesley\frontend\src\pages" />
       <recent name="C:\Users\wesleyxiaoluo\Desktop\gitsubmit\capstone-project-9900f16awesley\game" />
     </key>
@@ -121,7 +117,8 @@
       <workItem from="1682514864522" duration="1565000" />
       <workItem from="1683507960208" duration="12677000" />
       <workItem from="1683553906348" duration="13345000" />
-      <workItem from="1683573517731" duration="10162000" />
+      <workItem from="1683573517731" duration="10760000" />
+      <workItem from="1683644381359" duration="2893000" />
     </task>
     <servers />
   </component>
